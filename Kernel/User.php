@@ -8,7 +8,11 @@
 *
 */
 //Usuario por Sesión
-$u_q = mysql_query("SELECT * FROM users WHERE id = '". $_SESSION['id'] ."'");
-$u = mysql_fetch_assoc($u_q);
+
+if(isset($_SESSION['id']))
+{
+    $u_q = $mysqli->query("SELECT * FROM users WHERE id = '" . $_SESSION['id'] . "'");
+    $u = $u_q->fetch_assoc();
+}
 
 ?>

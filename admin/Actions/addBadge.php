@@ -14,10 +14,10 @@ if(isset($_POST['code']) && !empty($_POST['code']) &&
    isset($_POST['price']) && !empty($_POST['price']) &&
    isset($_POST['amount']) && !empty($_POST['amount']))
 {
-	$v_badge = mysql_query("SELECT * FROM badges WHERE code = '". $_POST['code'] ."'");
-	if(!mysql_num_rows($v_badge))
+	$v_badge = $mysqli->query("SELECT * FROM badges WHERE code = '". $_POST['code'] ."'");
+	if(!$v_badge->num_rows)
 	{
-		mysql_query("INSERT INTO badges SET code = '". $_POST['code'] ."',
+		$mysqli->query("INSERT INTO badges SET code = '". $_POST['code'] ."',
 		                                    price = '". $_POST['price'] ."',
 											amount = '". $_POST['amount'] ."'");
 			echo '<font color="green">La placa <b>'. $_POST['code'] .'</b> Fue agregada con exito</font>';

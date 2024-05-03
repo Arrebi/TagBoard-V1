@@ -2,7 +2,7 @@
 /*
 *
 * Programador: Juan Arrebillaga
-* Diseñador: Antonio Zavala (TheLastDark)
+* Diseï¿½ador: Antonio Zavala (TheLastDark)
 * Web: http://tagboard.mundo-fans.eu
 * Version: 1.0
 *
@@ -10,12 +10,20 @@
 
 session_start();
 
-$Mysql = array('host' => 'HOST',
-			   'user' => 'USUARIO',
-			   'pass' => 'CONTRASEÑA',
-			   'db'   => 'BASE DE DATOS');
+$mysqli = new mysqli('localhost',
+			   'root',
+			   '123456',
+			   'tagboard');
 
-$connect = mysql_connect($Mysql['host'], $Mysql['user'], $Mysql['pass']) or die ('Error al Conectar');
-mysql_select_db($Mysql['db'], $connect) or die ('Error al Seleccionar la base de datos: <b>' . $Mysql['db']  . '</b>');
+
+// Verificar la conexiÃ³n
+if ($mysqli->connect_errno) {
+    die('Error al conectar con la base de datos: ' . $mysqli->connect_error);
+}
+
+// Seleccionar la base de datos
+if (!$mysqli->select_db('tagboard')) {
+    die('Error al seleccionar la base de datos: ' . $mysqli->error);
+}
 
 ?>

@@ -10,10 +10,10 @@
 require(dirname(dirname(dirname(__FILE__))).'/Kernel/Config.php');
 require(dirname(dirname(dirname(__FILE__))).'/Kernel/User.php');
 
-$q = mysql_query("SELECT * FROM badges WHERE code = '". $_POST['code'] ."'");
-if(mysql_num_rows($q))
+$q = $mysqli->query("SELECT * FROM badges WHERE code = '". $_POST['code'] ."'");
+if($q->num_rows)
 {
-	mysql_query("DELETE FROM badges WHERE code = '".  $_POST['code']."'");
+	$mysqli->query("DELETE FROM badges WHERE code = '".  $_POST['code']."'");
 	echo '<font color="green">La placa '. $_POST['code'] .' fue eliminada con exito</font>';
 }
 else

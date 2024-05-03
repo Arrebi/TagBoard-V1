@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="boxBot"></div>
-		<?
+		<?php
 		}
 		?>
 			</div>

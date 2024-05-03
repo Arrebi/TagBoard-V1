@@ -12,8 +12,8 @@ require('./Kernel/User.php');
 
 if($_GET['id'])
 {
-	$q = mysql_query("SELECT * FROM users WHERE id = '". $_GET['id'] ."'");
-	$up = mysql_fetch_assoc($q);
+	$q = $mysqli->query("SELECT * FROM users WHERE id = '". $_GET['id'] ."'");
+	$up = $q->fetch_assoc();
 	?>
 	<script>
 		$('#changeMission').submit(function(e)
@@ -37,19 +37,19 @@ if($_GET['id'])
 		<div class="sep"></div>
 		<div class="c">
 			<div class="c1">
-				<img src="http://www.habbohotel.es/habbo-imaging/avatarimage?user=<?=$up['username'];?>&direction=11&head_direction=3&size=l" />
+				<img src="http://www.habbo.es/habbo-imaging/avatarimage?user=<?=$up['username'];?>&direction=11&head_direction=3&size=m" />
 			</div>
 			<div class="c2">
 				Nombre: <b><?=utf8_encode($up['username']);?></b></br>
 				Email: <b><?=utf8_encode($up['email']);?></b></br>
-				<?
+				<?php
 				if($u['id'] == $up['id'])
 				{
 				?>
 					<form action="" method="post" id="changeMission">
 						<input type="text" name="mission" value="<?=utf8_encode($u['mission']);?>" placeholder="Coloca tu Misión"> <span id="result-m"></span>
 					</form>
-				<?
+				<?php
 				}
 				else
 					echo 'Misión: <b>'. utf8_encode($up['mission']) .'</b></br>';
@@ -61,19 +61,19 @@ if($_GET['id'])
 		<div class="sep"></div>
 		<div class="c">
 			<div class="inventory">
-			<?
-			$qb = mysql_query("SELECT * FROM inventory_badge WHERE userid = '". $up['id'] ."'");
-			if(mysql_num_rows($qb))
+			<?php
+			$qb = $mysqli->query("SELECT * FROM inventory_badge WHERE userid = '". $up['id'] ."'");
+			if($qb->num_rows)
 			{
-				$total = mysql_num_rows($qb);
+				$total = $qb->num_rows;
 				echo '<div align="center">Total de placas: <b>'. $total .'</b></div>';
-				while($b = mysql_fetch_assoc($qb))
+				while($b = $qb->fetch_assoc())
 				{
-					$qbn = mysql_query("SELECT * FROM badges WHERE id = '". $b['badgeid'] ."'");
-					$n = mysql_fetch_assoc($qbn);
+					$qbn = $mysqli->query("SELECT * FROM badges WHERE id = '". $b['badgeid'] ."'");
+					$n = $qbn->fetch_assoc();
 				?>
 					<div class="badge" style="background-image: url('http://habboo-a.akamaihd.net/c_images/album1584/<?=$n['code'];?>.gif');"></div>
-				<?
+				<?php
 				}
 			}
 			else
@@ -83,7 +83,7 @@ if($_GET['id'])
 		</div>
 		
 
-	<?
+	<?php
 }
 
 ?>

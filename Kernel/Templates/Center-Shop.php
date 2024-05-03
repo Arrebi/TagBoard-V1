@@ -2,24 +2,24 @@
 				<div class="title">Tienda</div>
 				<div class="boxTop"><?if(isset($_SESSION['id'])) : ?><a href="./logout.php"><div class="Logout" id="Logout"></div></a> <? else : ?><div class="Logout-Hide" id="Logout-Hide"></div><? endif; ?> <div class="boxTitle"><? if(isset($_SESSION['id'])) : ?> <?=utf8_encode($u['username']);?> tienes <b><?=$u['coins']?></b> Coins <? else : ?>Haz Login para acceder al Chat <? endif; ?></div></div>
 				<div class="boxMid">
-				<?
+				<?php
 				if(isset($_SESSION['id']))
 				{
 				?>
 					<div id="result-shop"></div>
 					<div class="chatShop">
-					<?
-					$q = mysql_query("SELECT * FROM badges ORDER BY id ASC");
-					while($b = mysql_fetch_assoc($q))
+					<?php
+					$q = $mysqli->query("SELECT * FROM badges ORDER BY id ASC");
+					while($b = $q->fetch_assoc())
 					{
 					?>
 						<div class="badge" onClick="Buy('<?=$b['code']?>');" style="background-image: url('http://habboo-a.akamaihd.net/c_images/album1584/<?=$b['code'];?>.gif');"><div class="price"><?=$b['price'];?> Coins</br> Resto:<?=$b['amount'];?></div></div>
-					<?
+					<?php
 					}
 					?>
 
 					</div>
-				<?
+				<?php
 				}
 				else
 				{
@@ -27,7 +27,7 @@
 					<div class="chatShop">
 						Necesitas estar <b>Logueado</b> o <b>Registrado</b> para poder utilizar la Tienda
 					</div>
-				<?
+				<?php
 				}
 				?>
 				</div>

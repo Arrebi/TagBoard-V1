@@ -1,8 +1,8 @@
-<?
+<?php
 require(dirname(dirname(dirname(__FILE__))).'/Kernel/Config.php');
 require(dirname(dirname(dirname(__FILE__))).'/Kernel/User.php');
 
-$q = mysql_query("SELECT * FROM badges ORDER BY id ASC");
+$q = $mysqli->query("SELECT * FROM badges ORDER BY id ASC");
 ?>
 <script>
 	Form();
@@ -11,12 +11,12 @@ $q = mysql_query("SELECT * FROM badges ORDER BY id ASC");
 	<form action="" method="post" id="editBadge">
 		Placa a Editar:</br>
 		<select name="code">
-		<?
-		while($b = mysql_fetch_assoc($q))
+		<?php
+		while($b = $q->fetch_assoc())
 		{
 		?>
 			<option value="<?=$b['code'];?>"><?=$b['code'];?></option>
-		<?
+		<?php
 		}
 		?>
 		<hr></hr>

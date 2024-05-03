@@ -2,7 +2,7 @@
 /*
 *
 * Programador: Juan Arrebillaga
-* Diseñador: Antonio Zavala (TheLastDark)
+* Diseï¿½ador: Antonio Zavala (TheLastDark)
 * Web: http://tagboard.mundo-fans.eu
 * Version: 1.0
 *
@@ -24,7 +24,7 @@ if($u['rank'] >= 2)
 		<script src="./jquery/ajax.js"></script>
 	</head>
 	<body>
-		<h2 style="text-align: center">Administración</h2>
+		<h2 style="text-align: center">Administraciï¿½n</h2>
 		<div class="boxTop">
 			<div class="nav">
 				<div class="menu" onClick="Load('inicio');">Inicio</div>
@@ -46,7 +46,7 @@ if($u['rank'] >= 2)
 		<div id="result" style="text-align: center;"></div>
 	</body>
 </html>
-<?
+<?php
 }
 else
 	echo 'Acceso Denegado';

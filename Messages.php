@@ -9,14 +9,14 @@
 */
 require('./Kernel/Config.php');
 
-$sql_messages = mysql_query("SELECT * FROM messages ORDER BY id ASC");
-while ($messages = mysql_fetch_assoc($sql_messages))
+$sql_messages = $mysqli->query("SELECT * FROM messages ORDER BY id ASC");
+while ($messages = $sql_messages->fetch_assoc())
 {
-$autor_q = mysql_query("SELECT * FROM users WHERE id = '". $messages['authorid'] ."'");
-$autor = mysql_fetch_assoc($autor_q);
+	$autor_q = $mysqli->query("SELECT * FROM users WHERE id = '". $messages['authorid'] ."'");
+	$autor = $autor_q->fetch_assoc();
 ?>
 	<div class="Chat"><a><div id="Avatar">
-			<?
+			<?php
 				switch ($autor['rank']) {
 					case 0:
 						echo '<font>U</font>';
@@ -34,7 +34,7 @@ $autor = mysql_fetch_assoc($autor_q);
 				}
 			?>
 	</div><div id="Messages"><b><a href="javascript:void(0);" onClick="Profile(<?=$autor['id'];?>);"><?=utf8_encode($autor['username']);?></a></b> <?=utf8_decode($messages['message']);?></div></div>
-<?
+<?php
 }
 ?>
 <script>

@@ -7,12 +7,12 @@
 * Version: 1.0
 *
 */
-require('.../../Kernel/Config.php');
-require('../../Kernel/User.php');
+require('../Config.php');
+require('../User.php');
 
 if(isset($_POST['mission']) && !empty($_POST['mission']))
 {
-	mysql_query("UPDATE users SET mission = '". $_POST['mission'] ."' WHERE id = '". $u['id'] ."'");
+	$mysqli->query("UPDATE users SET mission = '". $_POST['mission'] ."' WHERE id = '". $u['id'] ."'");
 	echo '<img src="./v.png" />';
 }
 else

@@ -15,7 +15,7 @@ if(isset($_POST['code']) && !empty($_POST['code']) &&
    isset($_POST['amount']) && !empty($_POST['amount']))
 
 {
-	mysql_query("UPDATE badges SET price = '". $_POST['price'] ."', amount = '". $_POST['amount'] ."' WHERE code = '". $_POST['code'] ."'");
+	$mysqli->query("UPDATE badges SET price = '". $_POST['price'] ."', amount = '". $_POST['amount'] ."' WHERE code = '". $_POST['code'] ."'");
 	echo '<font color="green">La placa '. $_POST['code'] .' fue editada con exito</font>';
 }
 else

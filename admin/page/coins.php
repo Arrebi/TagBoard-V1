@@ -1,4 +1,4 @@
-<?
+<?php
 require(dirname(dirname(dirname(__FILE__))).'/Kernel/Config.php');
 require(dirname(dirname(dirname(__FILE__))).'/Kernel/User.php');
 ?>
