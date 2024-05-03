@@ -1,0 +1,429 @@
+/* Predeterminado */
+
+div::after,
+.clearfix::after,
+.clear::after
+{
+	clear: both;
+	content: " ";
+	visibility: hidden;
+	display: block;
+}
+
+@font-face
+{
+	font-family: Ubuntu-L;
+	src: url(../fonts/Ubuntu-L.ttf);
+}
+
+@font-face
+{
+	font-family: Ubuntu;
+	src: url(../fonts/Ubuntu.ttf);
+}
+
+a
+{
+	text-decoration: none;
+}
+
+body
+{
+	background: #e9e9e9;
+	padding-top: 20px;
+	font-family: Ubuntu;
+	color: #858484;
+}
+
+::-webkit-scrollbar 
+{	
+	width: 10px;
+	height: 10px;
+	background: #e1e1e1;
+}
+
+
+::-webkit-scrollbar-thumb
+{	
+	background: #9d9d9d;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:horizontal
+{
+	display: none;
+}
+
+/* Contenido y Boxes */
+
+.content
+{
+	width: 856px;
+	margin: auto;
+}
+
+.content .title
+{
+	font-size: 36px;
+}
+
+.left
+{
+	width: 272px;
+	float: left;
+	overflow: hidden;
+}
+
+.center
+{
+	width: 272px;
+	float: left;
+	margin: 0px 20px;
+	overflow: hidden;
+}
+
+.right
+{
+	width: 272px;
+	float: left;
+	overflow: hidden;
+}
+
+.box
+{
+	width: 272px;
+	height: 10px;
+}
+
+.boxTop
+{
+	background: url(../boxes/boxTop.png) no-repeat;
+	width: 272px;
+	height: 49px;
+}
+
+.boxTop .addBox
+{
+	background: url(../boxes/addBox.png) no-repeat;
+	width: 8px;
+	height: 9px;
+	position: relative;
+	top: 22px;
+	left: 19px;
+	cursor: pointer;
+}
+
+.boxTop .Logout
+{
+	background: url(../boxes/Logout.png) no-repeat;
+	width: 6px;
+	height: 8px;
+	position: relative;
+	top: 22px;
+	left: 19px;
+	cursor: pointer;
+}
+
+.boxTop .Logout-Hide
+{
+	width: 6px;
+	height: 8px;
+	position: relative;
+	top: 22px;
+	left: 19px;
+}
+
+.boxTop .removeBox
+{
+	background: url(../boxes/removeBox.png) no-repeat;
+	width: 8px;
+	height: 9px;
+	position: relative;
+	top: 22px;
+	left: 19px;
+	cursor: pointer;
+}
+
+.boxTop .boxTitle
+{
+	background: url(../boxes/boxTitle.png);
+	width: 211px;
+	height: 30px;
+	font-family: Ubuntu-L;
+	font-size: 14px;
+	text-shadow: 0px 1px rgba(255,255,255,0.5);
+	text-align: center;
+	padding-top: 7px;
+	font-weight: lighter;
+	float: right;
+	position: relative;
+	left: -7px;
+}
+
+.boxMid
+{
+	background: url(../boxes/boxMid.png);
+	width: 262px;
+	height: auto;
+	padding: 1px 5px;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #636363;
+}
+.boxMid a
+{
+	text-decoration: none;
+	color: #636363;
+}
+
+.boxMid .chatMessages
+{
+	background: url(../boxes/chatMessages.png);
+	width: 246px;
+	height: 228px;
+	margin: auto;
+	margin-top: 5px;
+	padding: 5px;
+	overflow: auto;
+}
+
+.boxMid .chatShop
+{
+	background: url(../boxes/chatMessages.png);
+	width: 246px;
+	height: 228px;
+	margin: auto;
+	margin-top: 5px;
+	padding: 5px;
+	overflow: auto;
+}
+
+.boxMid .chatShop .badge
+{
+	background-color: rgba(0,0,0,0.15);
+	border-radius: 3px;
+	margin: 3px;
+	width: 53px;
+	height: 45px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.boxMid .chatShop .badge .price
+{
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 3px;
+	width: 53px;
+	height: 45px;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 1px 1px rgba(0,0,0,0.4);
+	display: none;
+}
+
+.boxMid .chatShop .badge:hover .price
+{
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 3px;
+	width: 53px;
+	height: 42px;
+	text-align: center;
+	padding-top: 3px;
+	color: #ffffff;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.boxMid .chatMessages .Chat
+{
+	width: 246px;
+	margin: auto auto;
+	margin-bottom: 8px;
+
+}
+
+.boxMid .chatMessages .Chat #Avatar
+{
+	background: url(../boxes/Avatar.png);
+	width: 23px;
+	text-align: center;
+	padding-top: 5px;
+	height: 18px;
+	cursor: pointer;
+	float: left;
+}
+
+.boxMid .chatMessages .Chat #Messages
+{
+	width: 215px;
+	margin: auto auto;
+	margin-left: 8px;
+	float:left;
+	position: relative;
+	top: 2px;
+}
+
+.boxBot
+{
+	background: url(../boxes/boxBot.png) no-repeat;
+	width: 272px;
+	height: 8px;
+}
+
+/* Inputs */
+
+input
+{
+	background: url(../inputs/Field.png) no-repeat;
+	width: 250px;
+	height: 33px;
+	border: none;
+	outline: none;
+	padding: 0px 5px;
+	margin-top: 5px;
+	font-family: Ubuntu-L;
+	font-size: 12px;
+	color: #6c6c6c;
+	text-shadow: 0px 1px rgba(255,255,255,0.5);
+}
+
+input[type='submit']
+{
+	background: url(../inputs/Submit.png) no-repeat;
+	width: 115px;
+	height: 33px;
+	border: none;
+	outline: none;
+	float: right;
+	padding: 0px 0px;
+	margin: 0px 0px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.Admin
+{
+	width: 260px;
+	background: #FA5858;
+	border-radius: 4px;
+	border: 1px solid #971616;
+	box-shadow: inset 0px 1px rgba(255,255,255,0.3);
+	text-align: center;
+	padding: 5px;
+	color: #ffffff;
+	text-shadow: 0px 1px rgba(0,0,0,0.4);
+	cursor: pointer;
+	opacity: 0.9;
+}
+
+.Button
+{
+	width: 260px;
+	background: #c3c3c3;
+	border-radius: 4px;
+	border: 1px solid #444444;
+	box-shadow: inset 0px 1px rgba(255,255,255,0.5);
+	text-align: center;
+	padding: 5px;
+	color: #ffffff;
+	text-shadow: 0px 1px rgba(0,0,0,0.4);
+	cursor: pointer;
+	opacity: 0.9;
+	margin-bottom: 5px;
+}
+
+.alertProfile
+{
+	background: #ffffff;
+	border: 1px solid #444444;
+	width: 390px;
+	height: auto;
+	padding: 5px;
+	position: absolute;
+	font-family: Ubuntu-l;
+	font-size: 14px;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: 50px;
+	z-index: 99;
+}
+
+.alertProfile .Title
+{
+	font-size: 18px;
+	font-family: Ubuntu;
+}
+
+.alertProfile .sep
+{
+	background: #444444;
+	width: 400px;
+	height: 1px;
+	margin-left: -5px;
+}
+
+.alertProfile .Top
+{
+	background: #e2e2e2;
+	border: 1px solid #c3c3c3;
+	box-shadow: inset 0px 1px rgba(255,255,255,0.4);
+	padding: 4px;
+	border-radius: 3px;
+	font-family: Ubuntu-l;
+	font-size: 14px;
+	color: #ffffff;
+	text-shadow: 0px 1px rgba(0,0,0,0.5);
+	margin-bottom: 5px;
+}
+
+.alertProfile .c
+{
+	height: auto;
+	margin: auto;
+}
+
+.alertProfile .c .c1
+{
+	float: left;
+	height: 110px;
+}
+
+.alertProfile .c .c2
+{
+	float: left;
+	height: 100px;
+	margin-top: 25px;
+	margin-left: 10px;
+
+}
+
+.alertProfile .c .inventory
+{
+	background: #ededed;
+	border: 1px solid #636363;
+	width: 290px;
+	height: auto;
+	margin: auto;
+	margin-top: 8px;
+	border-radius: 3px;
+	box-shadow: inset 0px 2px rgba(255,255,255,0.4);
+	padding: 5px;
+	font-family: Ubuntu-l;
+	font-size: 12px;
+}
+
+.alertProfile .c .inventory .badge
+{
+	background-color: rgba(0,0,0,0.15);
+	border-radius: 3px;
+	margin: 3px;
+	width: 53px;
+	height: 45px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}

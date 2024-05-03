@@ -1,0 +1,163 @@
+/* Predeterminado */
+
+div::after,
+.clearfix::after,
+.clear::after
+{
+	clear: both;
+	content: " ";
+	visibility: hidden;
+	display: block;
+}
+
+@font-face
+{
+	font-family: Ubuntu-L;
+	src: url(../fonts/Ubuntu-L.ttf);
+}
+
+@font-face
+{
+	font-family: Ubuntu;
+	src: url(../fonts/Ubuntu.ttf);
+}
+
+body
+{
+	background: #e9e9e9;
+	padding-top: 20px;
+	font-family: Ubuntu;
+	color: #858484;
+}
+
+::-webkit-scrollbar 
+{	
+	width: 10px;
+	height: 10px;
+	background: #e1e1e1;
+}
+
+
+::-webkit-scrollbar-thumb
+{	
+	background: #9d9d9d;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:horizontal
+{
+	display: none;
+}
+
+/* Administracion Total */
+
+.boxTop
+{
+	background: url('../img/boxTop.png');
+	width: 556px;
+	height: 48px;
+	margin: auto;
+}
+
+.boxTop .nav
+{
+	font-family: Ubuntu-L;
+	font-size: 12px;
+	color: #6f6f6f;
+	text-shadow: 0px 1px rgba(255,255,255,0.3);
+	float: left;
+	margin-left: 55px;
+	margin-top: 12px;
+}
+
+.boxTop .nav .menu
+{
+	background: rgb(221,221,221); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(221,221,221,1) 50%, rgba(215,215,215,1) 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(221,221,221,1)), color-stop(50%,rgba(215,215,215,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(221,221,221,1) 50%,rgba(215,215,215,1) 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(221,221,221,1) 50%,rgba(215,215,215,1) 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(221,221,221,1) 50%,rgba(215,215,215,1) 50%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(221,221,221,1) 50%,rgba(215,215,215,1) 50%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#d7d7d7',GradientType=0 ); /* IE6-9 */
+	padding: 5px;
+	border: 1px solid #8e8e8e;
+	display: inline-block;
+	box-shadow: inset 0px 2px rgba(255,255,255,0.4), inset 0px -2px rgba(0,0,0,0.1);
+	cursor :pointer;
+}
+
+.boxMid
+{
+	background: url('../img/boxMid.png');
+	width: 556px;
+	height: auto;
+	margin: auto;
+	font-family: Ubuntu-L;
+	font-size: 12px;
+	padding: 4px 0px;
+	color: #6f6f6f;
+	text-shadow: 0px 1px rgba(255,255,255,0.3);
+}
+
+.boxMid .contentTop
+{
+	background: url('../img/ContentTop.png');
+	width: 542px;
+	height: 4px;
+	margin: auto;
+}
+
+.boxMid .contentMid
+{
+	background: url('../img/contentMid.png');
+	width: 534px;
+	height: auto;
+	padding: 4px;
+	margin: auto;
+}
+
+.boxMid .contentBot
+{
+	background: url('../img/ContentBot.png');
+	width: 542px;
+	height: 4px;
+	margin: auto;
+}
+
+.boxBot
+{
+	background: url('../img/boxBot.png');
+	width: 556px;
+	height: 7px;
+	margin: auto;
+}
+
+input
+{
+	background: url(../inputs/Field.png) no-repeat;
+	width: 250px;
+	height: 33px;
+	border: none;
+	outline: none;
+	padding: 0px 5px;
+	margin-top: 5px;
+	font-family: Ubuntu-L;
+	font-size: 12px;
+	color: #6c6c6c;
+	text-shadow: 0px 1px rgba(255,255,255,0.5);
+}
+
+input[type='submit']
+{
+	background: url(../inputs/Submit.png) no-repeat;
+	width: 115px;
+	height: 33px;
+	border: none;
+	outline: none;
+	padding: 0px 0px;
+	margin: 0px 0px;
+	margin-top: 5px;
+	cursor: pointer;
+}
